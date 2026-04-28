@@ -239,6 +239,7 @@ function Index() {
                 {pillar.number}
               </p>
               <div className="max-w-2xl">
+                <pillar.Icon className="mb-8 h-9 w-9 text-rose" strokeWidth={1.25} />
                 <p className="text-xs font-light uppercase tracking-[0.16em] text-olive sm:text-sm">
                   {pillar.eyebrow}
                 </p>
