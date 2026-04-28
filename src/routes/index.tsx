@@ -263,9 +263,14 @@ function Index() {
       >
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
-            <h2 className="max-w-2xl font-serif text-4xl leading-tight sm:text-5xl">
-              Trusted for the trips people remember longest
-            </h2>
+            <div>
+              <p className="text-[0.68rem] font-bold uppercase tracking-[0.32em] text-rose">
+                Testimonials
+              </p>
+              <h2 className="mt-4 max-w-2xl font-serif text-4xl leading-tight sm:text-5xl">
+                Trusted for the trips people remember longest
+              </h2>
+            </div>
             <p className="max-w-sm text-sm uppercase leading-7 tracking-[0.24em] text-linen/70">
               Honeymoons · family escapes · Europe summers · island retreats
             </p>
