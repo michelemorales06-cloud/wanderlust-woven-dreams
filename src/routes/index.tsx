@@ -30,37 +30,6 @@ const IconBase = ({
   </svg>
 );
 
-const GemIcon: IconComponent = (props) => (
-  <IconBase {...props}>
-    <path d="M6 3h12l4 6-10 12L2 9l4-6Z" />
-    <path d="M2 9h20" />
-    <path d="m12 21 4-12-4-6-4 6 4 12Z" />
-  </IconBase>
-);
-
-const MapIcon: IconComponent = (props) => (
-  <IconBase {...props}>
-    <path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3V6Z" />
-    <path d="M9 3v15" />
-    <path d="M15 6v15" />
-  </IconBase>
-);
-
-const PlaneIcon: IconComponent = (props) => (
-  <IconBase {...props}>
-    <path d="M21 16 3 21l4-9-4-9 18 5-10 4 10 4Z" />
-    <path d="M7 12h4" />
-  </IconBase>
-);
-
-const HandshakeIcon: IconComponent = (props) => (
-  <IconBase {...props}>
-    <path d="m7 11 3-3 4 4 2-2 5 5-4 4-3-3-2 2-5-5Z" />
-    <path d="m2 12 5-5 3 1" />
-    <path d="m22 12-5-5-3 1" />
-  </IconBase>
-);
-
 const SparklesIcon: IconComponent = (props) => (
   <IconBase {...props}>
     <path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z" />
@@ -97,27 +66,34 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const services: Array<[IconComponent, string, string]> = [
-  [
-    GemIcon,
-    "Stay better",
-    "Hotel matches, upgrades, amenities, and room notes are positioned with care.",
-  ],
-  [
-    MapIcon,
-    "Travel personally",
-    "Every recommendation reflects the way you actually like to spend your days.",
-  ],
-  [
-    PlaneIcon,
-    "Move seamlessly",
-    "Transfers, timing, reservations, and destination flow are aligned before you go.",
-  ],
-  [
-    HandshakeIcon,
-    "Arrive certain",
-    "You step into a trip that already feels considered, calm, and beautifully handled.",
-  ],
+const valueProps = [
+  {
+    number: "01",
+    eyebrow: "Intuitive Curation",
+    headline: "The why before the where.",
+    copy: "We move past the surface-level Top 10 lists. By understanding the psychology behind your journey—whether it’s a milestone anniversary or a deep need for cultural immersion—we design experiences that pull you out of your comfort zone and into the heart of a destination.",
+    result: "A journey tailored not just to your itinerary, but to your personal evolution.",
+    image: diningImage,
+    alt: "Atmospheric Mediterranean dining table curated for a bespoke journey",
+  },
+  {
+    number: "02",
+    eyebrow: "Radical Accountability",
+    headline: "Your dedicated advocate, every mile of the way.",
+    copy: "You are never a confirmation number. We handle the friction—from briefing hotel managers before you arrive to monitoring flight changes and pricing in real-time. If a detail isn’t right, we’ve already started fixing it before you land, so you can remain entirely present in the moment.",
+    result: "The quiet confidence of having a human partner in every time zone.",
+    image: heroImage,
+    alt: "Luxury coastal terrace that reflects calm, seamless travel support",
+  },
+  {
+    number: "03",
+    eyebrow: "The Vetted Edge",
+    headline: "Authentic perspective. Exclusive access.",
+    copy: "True luxury is a perspective, not a price point. Having explored the world from $6 hidden gems to ultra-luxury estates, we bring a calibrated BS detector to every recommendation. We leverage global partnerships to secure un-googleable VIP perks—like room upgrades and private transfers—at no extra cost to you.",
+    result: "A sharper point of view, better access, and recommendations that actually earn their place.",
+    image: archImage,
+    alt: "European architecture and villa archway selected as luxury travel inspiration",
+  },
 ];
 
 const testimonials = [
