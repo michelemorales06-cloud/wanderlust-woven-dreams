@@ -6,6 +6,7 @@ import diningImage from "../assets/mediterranean-dining-detail.jpg";
 
 type IconProps = {
   className?: string;
+  strokeWidth?: number;
 };
 
 type IconComponent = (props: IconProps) => React.ReactElement;
@@ -291,7 +292,7 @@ function Index() {
               />
             </figure>
             <div className="scroll-reveal col-span-3 border-y border-border py-8 pl-2">
-              <Sparkles className="mb-6 h-8 w-8 text-rose" strokeWidth={1.25} />
+              <SparklesIcon className="mb-6 h-8 w-8 text-rose" strokeWidth={1.25} />
               <p className="font-serif text-2xl leading-snug text-ink">
                 Insider stays, thoughtful tables, unhurried days, and details that quietly say: this
                 was made for you.
@@ -430,7 +431,7 @@ function Index() {
             </p>
           </div>
           <div className="flex items-center gap-3 text-[0.66rem] font-bold uppercase tracking-[0.24em] text-linen/75">
-            <CalendarDays className="h-4 w-4 text-rose" strokeWidth={1.5} />
+            <CalendarIcon className="h-4 w-4 text-rose" strokeWidth={1.5} />
             <a
               href="mailto:hello@themodernnomade.com"
               className="transition-colors hover:text-linen"
