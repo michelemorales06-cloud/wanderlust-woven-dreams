@@ -251,11 +251,6 @@ function Index() {
                 <p className="mt-6 text-sm font-light leading-7 text-muted-foreground">
                   {pillar.copy}
                 </p>
-                {pillar.result && (
-                  <p className="mt-auto border-l border-rose pl-5 pt-10 font-serif text-2xl leading-snug text-ink">
-                    The Result: {pillar.result}
-                  </p>
-                )}
               </div>
             </article>
           ))}
@@ -287,52 +282,6 @@ function Index() {
                 </footer>
               </blockquote>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-5 pb-20 sm:px-8 lg:pb-28">
-        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div className="scroll-reveal">
-            <p className="text-[0.68rem] font-bold uppercase tracking-[0.32em] text-rose">
-              Experiences
-            </p>
-            <h2 className="mt-4 max-w-xl font-serif text-4xl leading-tight sm:text-5xl">
-              A travel moodboard, translated into reservations, rhythm, and access
-            </h2>
-            <p className="mt-6 max-w-lg text-sm leading-7 text-muted-foreground">
-              From a terrace lunch to a private boat day, the itinerary is composed like an
-              editorial spread: varied, atmospheric, and intentionally paced.
-            </p>
-          </div>
-          <div className="grid grid-cols-6 gap-4 md:gap-6">
-            <figure className="scroll-reveal col-span-3 overflow-hidden bg-secondary shadow-soft arch-frame">
-              <img
-                src={archImage}
-                alt="European villa archway with olive trees and roses"
-                width={1200}
-                height={1600}
-                loading="lazy"
-                className="aspect-[3/5] h-full w-full object-cover"
-              />
-            </figure>
-            <figure className="scroll-reveal col-span-3 mt-10 overflow-hidden bg-secondary shadow-soft arch-frame">
-              <img
-                src={archImage}
-                alt="Arched villa corridor in warm Mediterranean light"
-                width={1200}
-                height={1600}
-                loading="lazy"
-                className="aspect-[4/5] h-full w-full object-cover object-center"
-              />
-            </figure>
-            <div className="scroll-reveal col-span-3 border-y border-border py-8 pl-2">
-              <SparklesIcon className="mb-6 h-8 w-8 text-rose" strokeWidth={1.25} />
-              <p className="font-serif text-2xl leading-snug text-ink">
-                Insider stays, thoughtful tables, unhurried days, and details that quietly say: this
-                was made for you.
-              </p>
-            </div>
           </div>
         </div>
       </section>
