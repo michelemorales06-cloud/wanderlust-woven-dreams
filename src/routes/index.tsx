@@ -274,12 +274,12 @@ function Index() {
 
       <section id="about" className="border-t border-border bg-veil px-5 py-20 sm:px-8 lg:py-28">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div className="aspect-[4/5] overflow-hidden bg-secondary shadow-editorial">
+          <div className="aspect-[4/5] overflow-hidden bg-secondary shadow-editorial arch-frame scroll-reveal">
             <img
-              src={heroImage}
+              src={archImage}
               alt="Elegant European terrace used as luxury travel inspiration"
-              width={1600}
-              height={1000}
+              width={1200}
+              height={1600}
               loading="lazy"
               className="h-full w-full object-cover object-left transition-transform duration-700 hover:scale-105"
             />
@@ -319,6 +319,24 @@ function Index() {
           </div>
         </div>
       </section>
+      <footer className="bg-primary px-5 py-12 text-primary-foreground sm:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-8 border-t border-linen/18 pt-10 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="font-serif text-3xl uppercase leading-none tracking-[0.22em] text-linen">
+              The<br />Modern Nomade
+            </p>
+            <p className="mt-5 max-w-md text-sm leading-7 text-linen/68">
+              Bespoke travel · insider access · thoughtful planning · seamless experiences.
+            </p>
+          </div>
+          <div className="flex items-center gap-3 text-[0.66rem] font-bold uppercase tracking-[0.24em] text-linen/75">
+            <CalendarDays className="h-4 w-4 text-rose" strokeWidth={1.5} />
+            <a href="mailto:hello@themodernnomade.com" className="transition-colors hover:text-linen">
+              Begin an inquiry
+            </a>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
