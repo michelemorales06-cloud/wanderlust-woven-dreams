@@ -13,7 +13,7 @@ function NotFoundComponent() {
         </p>
         <div className="mt-6">
           <Link
-            to="/"
+            to="."
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
             Go home
@@ -29,16 +29,29 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "The Modern Nomade | Luxury Travel Advisor" },
+      {
+        name: "description",
+        content:
+          "Bespoke luxury travel planning with insider access, elevated stays, seamless itineraries, and thoughtful support.",
+      },
+      { name: "author", content: "The Modern Nomade" },
+      { property: "og:title", content: "The Modern Nomade | Luxury Travel Advisor" },
+      {
+        property: "og:description",
+        content:
+          "High-end travel planning for refined escapes, milestone trips, and seamless luxury itineraries.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap",
+      },
       {
         rel: "stylesheet",
         href: appCss,
