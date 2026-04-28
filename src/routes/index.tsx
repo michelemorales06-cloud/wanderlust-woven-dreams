@@ -233,7 +233,7 @@ function Index() {
           {valueProps.map((pillar) => (
             <article
               key={pillar.eyebrow}
-              className="scroll-reveal flex min-h-[38rem] flex-col bg-card p-8 sm:p-10"
+              className="scroll-reveal flex min-h-[28rem] flex-col bg-card p-7 sm:p-9"
             >
               <div className="flex items-start justify-between gap-6">
                 <p className="font-serif text-6xl leading-none text-rose sm:text-7xl">
@@ -241,7 +241,7 @@ function Index() {
                 </p>
                 <pillar.Icon className="mt-2 h-9 w-9 shrink-0 text-olive" strokeWidth={1.25} />
               </div>
-              <div className="mt-10 flex flex-1 flex-col">
+              <div className="mt-8 flex flex-col">
                 <p className="text-xs font-light uppercase tracking-[0.16em] text-olive sm:text-sm">
                   {pillar.eyebrow}
                 </p>
