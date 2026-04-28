@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { CalendarDays, Gem, Handshake, Map, Plane, Sparkles } from "lucide-react";
 
+import archImage from "../assets/editorial-villa-arch.jpg";
 import heroImage from "../assets/luxury-coastal-terrace.jpg";
+import diningImage from "../assets/mediterranean-dining-detail.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -23,18 +26,21 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
+  [Gem, "Stay better", "Hotel matches, upgrades, amenities, and room notes are positioned with care."],
   [
-    "Arrive certain",
-    "You step into a trip that already feels considered, calm, and beautifully handled.",
+    Map,
+    "Travel personally",
+    "Every recommendation reflects the way you actually like to spend your days.",
   ],
-  ["Stay better", "Hotel matches, upgrades, amenities, and room notes are positioned with care."],
   [
+    Plane,
     "Move seamlessly",
     "Transfers, timing, reservations, and destination flow are aligned before you go.",
   ],
   [
-    "Travel personally",
-    "Every recommendation reflects the way you actually like to spend your days.",
+    Handshake,
+    "Arrive certain",
+    "You step into a trip that already feels considered, calm, and beautifully handled.",
   ],
 ];
 
