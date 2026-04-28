@@ -13,6 +13,7 @@ type IconComponent = (props: IconProps) => React.ReactElement;
 
 const IconBase = ({
   className,
+  strokeWidth = 1.25,
   children,
 }: IconProps & { children: React.ReactNode }) => (
   <svg
@@ -20,7 +21,7 @@ const IconBase = ({
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="1.25"
+    strokeWidth={strokeWidth}
     strokeLinecap="round"
     strokeLinejoin="round"
     className={className}
