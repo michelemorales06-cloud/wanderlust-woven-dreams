@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import archImage from "../assets/editorial-villa-arch.jpg";
-import heroImage from "../assets/luxury-coastal-terrace.jpg";
+import heroImage from "../assets/benoit-roy-lake-mountains.jpg";
 import diningImage from "../assets/mediterranean-dining-detail.jpg";
 
 type IconProps = {
@@ -183,7 +183,7 @@ function Index() {
       <section id="top" className="relative flex min-h-[92svh] items-center justify-center pt-24">
         <img
           src={heroImage}
-          alt="Luxury coastal villa terrace overlooking the sea"
+          alt="Lakeside mountains with sculptural trees and a quiet waterfront"
           width={1600}
           height={1000}
           className="absolute inset-0 h-full w-full object-cover animate-drift"
