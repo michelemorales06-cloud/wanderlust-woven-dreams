@@ -134,8 +134,8 @@ function Index() {
             Modern Nomade
           </a>
           <div className="hidden items-center gap-8 text-[0.66rem] font-semibold uppercase tracking-[0.28em] text-olive md:flex">
-            <a className="transition-colors hover:text-ink" href="#services">
-              Services
+            <a className="transition-colors hover:text-ink" href="#value-props">
+              Value
             </a>
             <a className="transition-colors hover:text-ink" href="#testimonials">
               Praise
@@ -196,28 +196,52 @@ function Index() {
         </div>
       </section>
 
-      <section id="services" className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-28">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="text-[0.68rem] font-bold uppercase tracking-[0.32em] text-rose">Services</p>
+      <section id="value-props" className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-28">
+        <div className="max-w-3xl">
+          <p className="text-[0.72rem] font-light uppercase tracking-[0.16em] text-rose">
+            The Modern Nomade Method
+          </p>
           <h2 className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">
-            Travel that feels effortless before you ever leave
+            A more discerning way to design the journey
           </h2>
         </div>
-        <div className="mt-14 grid gap-px bg-border md:grid-cols-4">
-          {services.map(([Icon, title, copy], index) => (
+        <div className="mt-20 space-y-20 lg:space-y-28">
+          {valueProps.map((pillar, index) => (
             <article
-              key={title}
-              className="group bg-card p-8 text-center shadow-soft transition-transform hover:-translate-y-1 scroll-reveal"
+              key={pillar.eyebrow}
+              className="scroll-reveal grid gap-10 border-t border-border pt-10 lg:grid-cols-[0.72fr_1.15fr_0.9fr] lg:items-start lg:gap-14"
             >
-              <Icon
-                className="mx-auto h-8 w-8 text-olive transition-transform group-hover:-translate-y-1"
-                strokeWidth={1.25}
-              />
-              <span className="mt-6 block font-serif text-3xl text-rose">0{index + 1}</span>
-              <h3 className="mt-7 text-sm font-bold uppercase tracking-[0.24em] text-ink">
-                {title}
-              </h3>
-              <p className="mt-4 text-sm leading-6 text-muted-foreground">{copy}</p>
+              <p className="font-serif text-6xl leading-none text-rose sm:text-7xl">
+                {pillar.number}
+              </p>
+              <div className="max-w-2xl">
+                <p className="text-xs font-light uppercase tracking-[0.16em] text-olive sm:text-sm">
+                  {pillar.eyebrow}
+                </p>
+                <h3 className="mt-4 font-serif text-3xl leading-tight text-ink sm:text-5xl">
+                  {pillar.headline}
+                </h3>
+                <p className="mt-6 text-sm font-light leading-7 text-muted-foreground sm:text-base sm:leading-8">
+                  {pillar.copy}
+                </p>
+                <p className="mt-7 border-l border-rose pl-5 font-serif text-2xl leading-snug text-ink">
+                  The Result: {pillar.result}
+                </p>
+              </div>
+              <figure
+                className={`overflow-hidden bg-secondary shadow-soft ${
+                  index === 1 ? "mt-0 aspect-[4/3] lg:mt-16" : "aspect-[3/4] arch-frame"
+                }`}
+              >
+                <img
+                  src={pillar.image}
+                  alt={pillar.alt}
+                  width={index === 1 ? 1600 : 1200}
+                  height={index === 1 ? 1000 : 1600}
+                  loading="lazy"
+                  className="h-full w-full object-cover"
+                />
+              </figure>
             </article>
           ))}
         </div>
