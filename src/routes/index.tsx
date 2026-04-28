@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CalendarDays, Gem, Handshake, Map, Plane, Sparkles } from "lucide-react";
+import { CalendarDays, Gem, Handshake, Map, Plane, Sparkles, type LucideIcon } from "lucide-react";
 
 import archImage from "../assets/editorial-villa-arch.jpg";
 import heroImage from "../assets/luxury-coastal-terrace.jpg";
@@ -25,7 +25,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const services = [
+const services: Array<[LucideIcon, string, string]> = [
   [Gem, "Stay better", "Hotel matches, upgrades, amenities, and room notes are positioned with care."],
   [
     Map,
@@ -158,12 +158,13 @@ function Index() {
           </h2>
         </div>
         <div className="mt-14 grid gap-px bg-border md:grid-cols-4">
-          {services.map(([title, copy], index) => (
+          {services.map(([Icon, title, copy], index) => (
             <article
               key={title}
-              className="group bg-card p-8 text-center shadow-soft transition-transform hover:-translate-y-1"
+              className="group bg-card p-8 text-center shadow-soft transition-transform hover:-translate-y-1 scroll-reveal"
             >
-              <span className="font-serif text-3xl text-rose">0{index + 1}</span>
+              <Icon className="mx-auto h-8 w-8 text-olive transition-transform group-hover:-translate-y-1" strokeWidth={1.25} />
+              <span className="mt-6 block font-serif text-3xl text-rose">0{index + 1}</span>
               <h3 className="mt-7 text-sm font-bold uppercase tracking-[0.24em] text-ink">
                 {title}
               </h3>
