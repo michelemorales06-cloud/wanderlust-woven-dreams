@@ -185,20 +185,40 @@
 
   .paper-grain {
     background-image:
-      radial-gradient(circle at 20% 10%, color-mix(in oklab, var(--color-rose) 20%, transparent) 0 1px, transparent 1px),
-      radial-gradient(circle at 80% 30%, color-mix(in oklab, var(--color-olive) 12%, transparent) 0 1px, transparent 1px);
-    background-size: 42px 42px, 58px 58px;
+      radial-gradient(
+        circle at 20% 10%,
+        color-mix(in oklab, var(--color-rose) 20%, transparent) 0 1px,
+        transparent 1px
+      ),
+      radial-gradient(
+        circle at 80% 30%,
+        color-mix(in oklab, var(--color-olive) 12%, transparent) 0 1px,
+        transparent 1px
+      );
+    background-size:
+      42px 42px,
+      58px 58px;
   }
 }
 
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(22px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes drift {
-  from { transform: translate3d(-1.5%, -1%, 0) scale(1.02); }
-  to { transform: translate3d(1.5%, 1%, 0) scale(1.06); }
+  from {
+    transform: translate3d(-1.5%, -1%, 0) scale(1.02);
+  }
+  to {
+    transform: translate3d(1.5%, 1%, 0) scale(1.06);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
