@@ -270,18 +270,20 @@ function Index() {
               Honeymoons · family escapes · Europe summers · island retreats
             </p>
           </div>
-          <div className="mt-14 grid gap-5 md:grid-cols-3">
-            {testimonials.map((quote) => (
+          <div className="mt-14 overflow-hidden">
+            <div className="flex w-max animate-testimonials-marquee gap-5 pr-5">
+            {[...testimonials, ...testimonials].map((quote, index) => (
               <blockquote
-                key={quote}
-                className="border border-linen/18 bg-linen/7 p-8 shadow-editorial transition-colors hover:bg-linen/10"
+                key={`${quote}-${index}`}
+                className="w-[19rem] shrink-0 border border-linen/18 bg-linen/7 p-8 shadow-editorial transition-colors hover:bg-linen/10 sm:w-[24rem] lg:w-[28rem]"
               >
-                <p className="font-serif text-2xl leading-snug text-linen">“{quote}”</p>
+                <p className="font-serif text-2xl italic leading-snug text-linen">“{quote}”</p>
                 <footer className="mt-8 text-[0.66rem] font-bold uppercase tracking-[0.28em] text-rose">
                   Private client
                 </footer>
               </blockquote>
             ))}
+            </div>
           </div>
         </div>
       </section>

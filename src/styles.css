@@ -211,6 +211,10 @@
       42px 42px,
       58px 58px;
   }
+
+  .animate-testimonials-marquee {
+    animation: testimonials-marquee 28s linear infinite;
+  }
 }
 
 @keyframes fade-in {
@@ -241,6 +245,15 @@
   }
   to {
     transform: translate3d(1.5%, 1%, 0) scale(1.06);
+  }
+}
+
+@keyframes testimonials-marquee {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
   }
 }
 
