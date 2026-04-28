@@ -104,7 +104,7 @@ function Index() {
         </nav>
       </header>
 
-      <section id="top" className="relative flex min-h-[92svh] items-end pt-24">
+      <section id="top" className="relative flex min-h-[92svh] items-center justify-center pt-24">
         <img
           src={heroImage}
           alt="Luxury coastal villa terrace overlooking the sea"
@@ -112,21 +112,21 @@ function Index() {
           height={1000}
           className="absolute inset-0 h-full w-full object-cover animate-drift"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/78 via-ink/30 to-background/8" />
-        <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-10 px-5 pb-16 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:pb-24">
-          <div className="max-w-2xl animate-fade-up text-primary-foreground">
+        <div className="absolute inset-0 bg-ink/48" />
+        <div className="relative z-10 mx-auto w-full max-w-5xl px-5 py-20 text-center sm:px-8">
+          <div className="mx-auto max-w-4xl animate-fade-up text-primary-foreground">
             <p className="mb-6 text-[0.68rem] font-semibold uppercase tracking-[0.34em] text-linen/85">
               Luxury travel, thoughtfully designed
             </p>
             <h1 className="font-serif text-5xl leading-[0.98] text-linen sm:text-7xl lg:text-8xl">
               Bespoke journeys for modern travelers
             </h1>
-            <div className="my-7 h-px w-20 editorial-rule" />
-            <p className="max-w-md text-sm leading-7 text-linen/88 sm:text-base">
+            <div className="mx-auto my-7 h-px w-24 editorial-rule" />
+            <p className="mx-auto max-w-xl text-sm leading-7 text-linen/88 sm:text-base">
               Elevated hotels, villas, cruises, and custom itineraries arranged with insider access
               and seamless support.
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
               <a
                 href="mailto:hello@themodernnomade.com"
                 className="border border-linen bg-linen px-7 py-4 text-center text-[0.66rem] font-bold uppercase tracking-[0.26em] text-ink transition-transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-ring"
@@ -141,12 +141,6 @@ function Index() {
               </a>
             </div>
           </div>
-          <aside className="hidden self-end border-l border-linen/35 pl-8 text-linen/86 lg:block">
-            <p className="max-w-xs font-serif text-2xl leading-snug">
-              “The difference is not more planning. It is better taste, better access, and fewer
-              open loops.”
-            </p>
-          </aside>
         </div>
       </section>
 
