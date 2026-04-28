@@ -30,37 +30,6 @@ const IconBase = ({
   </svg>
 );
 
-const GemIcon: IconComponent = (props) => (
-  <IconBase {...props}>
-    <path d="M6 3h12l4 6-10 12L2 9l4-6Z" />
-    <path d="M2 9h20" />
-    <path d="m12 21 4-12-4-6-4 6 4 12Z" />
-  </IconBase>
-);
-
-const MapIcon: IconComponent = (props) => (
-  <IconBase {...props}>
-    <path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3V6Z" />
-    <path d="M9 3v15" />
-    <path d="M15 6v15" />
-  </IconBase>
-);
-
-const PlaneIcon: IconComponent = (props) => (
-  <IconBase {...props}>
-    <path d="M21 16 3 21l4-9-4-9 18 5-10 4 10 4Z" />
-    <path d="M7 12h4" />
-  </IconBase>
-);
-
-const HandshakeIcon: IconComponent = (props) => (
-  <IconBase {...props}>
-    <path d="m7 11 3-3 4 4 2-2 5 5-4 4-3-3-2 2-5-5Z" />
-    <path d="m2 12 5-5 3 1" />
-    <path d="m22 12-5-5-3 1" />
-  </IconBase>
-);
-
 const SparklesIcon: IconComponent = (props) => (
   <IconBase {...props}>
     <path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z" />
@@ -97,27 +66,34 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const services: Array<[IconComponent, string, string]> = [
-  [
-    GemIcon,
-    "Stay better",
-    "Hotel matches, upgrades, amenities, and room notes are positioned with care.",
-  ],
-  [
-    MapIcon,
-    "Travel personally",
-    "Every recommendation reflects the way you actually like to spend your days.",
-  ],
-  [
-    PlaneIcon,
-    "Move seamlessly",
-    "Transfers, timing, reservations, and destination flow are aligned before you go.",
-  ],
-  [
-    HandshakeIcon,
-    "Arrive certain",
-    "You step into a trip that already feels considered, calm, and beautifully handled.",
-  ],
+const valueProps = [
+  {
+    number: "01",
+    eyebrow: "Intuitive Curation",
+    headline: "The why before the where.",
+    copy: "We move past the surface-level Top 10 lists. By understanding the psychology behind your journey—whether it’s a milestone anniversary or a deep need for cultural immersion—we design experiences that pull you out of your comfort zone and into the heart of a destination.",
+    result: "A journey tailored not just to your itinerary, but to your personal evolution.",
+    image: diningImage,
+    alt: "Atmospheric Mediterranean dining table curated for a bespoke journey",
+  },
+  {
+    number: "02",
+    eyebrow: "Radical Accountability",
+    headline: "Your dedicated advocate, every mile of the way.",
+    copy: "You are never a confirmation number. We handle the friction—from briefing hotel managers before you arrive to monitoring flight changes and pricing in real-time. If a detail isn’t right, we’ve already started fixing it before you land, so you can remain entirely present in the moment.",
+    result: "The quiet confidence of having a human partner in every time zone.",
+    image: heroImage,
+    alt: "Luxury coastal terrace that reflects calm, seamless travel support",
+  },
+  {
+    number: "03",
+    eyebrow: "The Vetted Edge",
+    headline: "Authentic perspective. Exclusive access.",
+    copy: "True luxury is a perspective, not a price point. Having explored the world from $6 hidden gems to ultra-luxury estates, we bring a calibrated BS detector to every recommendation. We leverage global partnerships to secure un-googleable VIP perks—like room upgrades and private transfers—at no extra cost to you.",
+    result: "A sharper point of view, better access, and recommendations that actually earn their place.",
+    image: archImage,
+    alt: "European architecture and villa archway selected as luxury travel inspiration",
+  },
 ];
 
 const testimonials = [
@@ -158,8 +134,8 @@ function Index() {
             Modern Nomade
           </a>
           <div className="hidden items-center gap-8 text-[0.66rem] font-semibold uppercase tracking-[0.28em] text-olive md:flex">
-            <a className="transition-colors hover:text-ink" href="#services">
-              Services
+            <a className="transition-colors hover:text-ink" href="#value-props">
+              Value
             </a>
             <a className="transition-colors hover:text-ink" href="#testimonials">
               Praise
@@ -220,28 +196,52 @@ function Index() {
         </div>
       </section>
 
-      <section id="services" className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-28">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="text-[0.68rem] font-bold uppercase tracking-[0.32em] text-rose">Services</p>
+      <section id="value-props" className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-28">
+        <div className="max-w-3xl">
+          <p className="text-[0.72rem] font-light uppercase tracking-[0.16em] text-rose">
+            The Modern Nomade Method
+          </p>
           <h2 className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">
-            Travel that feels effortless before you ever leave
+            A more discerning way to design the journey
           </h2>
         </div>
-        <div className="mt-14 grid gap-px bg-border md:grid-cols-4">
-          {services.map(([Icon, title, copy], index) => (
+        <div className="mt-20 space-y-20 lg:space-y-28">
+          {valueProps.map((pillar, index) => (
             <article
-              key={title}
-              className="group bg-card p-8 text-center shadow-soft transition-transform hover:-translate-y-1 scroll-reveal"
+              key={pillar.eyebrow}
+              className="scroll-reveal grid gap-10 border-t border-border pt-10 lg:grid-cols-[0.72fr_1.15fr_0.9fr] lg:items-start lg:gap-14"
             >
-              <Icon
-                className="mx-auto h-8 w-8 text-olive transition-transform group-hover:-translate-y-1"
-                strokeWidth={1.25}
-              />
-              <span className="mt-6 block font-serif text-3xl text-rose">0{index + 1}</span>
-              <h3 className="mt-7 text-sm font-bold uppercase tracking-[0.24em] text-ink">
-                {title}
-              </h3>
-              <p className="mt-4 text-sm leading-6 text-muted-foreground">{copy}</p>
+              <p className="font-serif text-6xl leading-none text-rose sm:text-7xl">
+                {pillar.number}
+              </p>
+              <div className="max-w-2xl">
+                <p className="text-xs font-light uppercase tracking-[0.16em] text-olive sm:text-sm">
+                  {pillar.eyebrow}
+                </p>
+                <h3 className="mt-4 font-serif text-3xl leading-tight text-ink sm:text-5xl">
+                  {pillar.headline}
+                </h3>
+                <p className="mt-6 text-sm font-light leading-7 text-muted-foreground sm:text-base sm:leading-8">
+                  {pillar.copy}
+                </p>
+                <p className="mt-7 border-l border-rose pl-5 font-serif text-2xl leading-snug text-ink">
+                  The Result: {pillar.result}
+                </p>
+              </div>
+              <figure
+                className={`overflow-hidden bg-secondary shadow-soft ${
+                  index === 1 ? "mt-0 aspect-[4/3] lg:mt-16" : "aspect-[3/4] arch-frame"
+                }`}
+              >
+                <img
+                  src={pillar.image}
+                  alt={pillar.alt}
+                  width={index === 1 ? 1600 : 1200}
+                  height={index === 1 ? 1000 : 1600}
+                  loading="lazy"
+                  className="h-full w-full object-cover"
+                />
+              </figure>
             </article>
           ))}
         </div>
