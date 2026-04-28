@@ -37,6 +37,28 @@ const SparklesIcon: IconComponent = (props) => (
   </IconBase>
 );
 
+const CompassIcon: IconComponent = (props) => (
+  <IconBase {...props}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="m15.5 8.5-2.2 4.8-4.8 2.2 2.2-4.8 4.8-2.2Z" />
+  </IconBase>
+);
+
+const AdvocateIcon: IconComponent = (props) => (
+  <IconBase {...props}>
+    <path d="M12 3 5 6v5c0 4.5 3 7.8 7 10 4-2.2 7-5.5 7-10V6l-7-3Z" />
+    <path d="m9 12 2 2 4-5" />
+  </IconBase>
+);
+
+const EdgeIcon: IconComponent = (props) => (
+  <IconBase {...props}>
+    <path d="M6 3h12l4 6-10 12L2 9l4-6Z" />
+    <path d="M2 9h20" />
+    <path d="m12 21 4-12-4-6-4 6 4 12Z" />
+  </IconBase>
+);
+
 const CalendarIcon: IconComponent = (props) => (
   <IconBase {...props}>
     <path d="M7 3v4" />
@@ -71,27 +93,30 @@ const valueProps = [
     number: "01",
     eyebrow: "Intuitive Curation",
     headline: 'The "Why" Before the "Where"',
-    copy: "We move past the surface-level Top 10 lists. By understanding the psychology behind your journey—whether it’s a milestone anniversary or a deep need for cultural immersion—we design experiences that pull you out of your comfort zone and into the heart of a destination.",
-    result: "A journey tailored not just to your itinerary, but to your personal evolution.",
+    copy: "We design around the deeper reason for your trip, not just the destination.",
+    result: "A journey tailored to your itinerary and your personal evolution.",
     image: diningImage,
     alt: "Atmospheric Mediterranean dining table curated for a bespoke journey",
+    Icon: CompassIcon,
   },
   {
     number: "02",
     eyebrow: "Radical Accountability",
     headline: "Your Dedicated Advocate, Every Mile of the Way",
-    copy: "You are never a confirmation number. We handle the friction—from briefing hotel managers before you arrive to monitoring flight changes and pricing in real-time. If a detail isn’t right, we’ve already started fixing it before you land, so you can remain entirely present in the moment.",
-    result: "The quiet confidence of having a human partner in every time zone.",
+    copy: "We monitor the moving pieces, brief the right people, and resolve friction before it reaches you.",
+    result: "Quiet confidence in every time zone.",
     image: heroImage,
     alt: "Luxury coastal terrace that reflects calm, seamless travel support",
+    Icon: AdvocateIcon,
   },
   {
     number: "03",
     eyebrow: "The Vetted Edge",
     headline: "Authentic Perspective. Exclusive Access.",
-    copy: 'True luxury is a perspective, not a price point. Having explored the world from $6 hidden gems to ultra-luxury estates, we bring a calibrated "BS detector" to every recommendation. We leverage global partnerships to secure "un-googleable" VIP perks—like room upgrades and private transfers—at no extra cost to you.',
+    copy: "We pair taste-tested recommendations with global partnerships and VIP perks you won’t find online.",
     image: archImage,
     alt: "European architecture and villa archway selected as luxury travel inspiration",
+    Icon: EdgeIcon,
   },
 ];
 
