@@ -93,8 +93,8 @@ const valueProps = [
     number: "01",
     eyebrow: "Intuitive Curation",
     headline: 'The "Why" Before the "Where"',
-    copy: "We design around the deeper reason for your trip, not just the destination.",
-    result: "A journey tailored to your itinerary and your personal evolution.",
+    copy: 'Beyond the surface-level "Top 10" lists lies a journey designed around your specific motives. We curate immersive experiences that pull you out of your comfort zone and into the heart of a culture.',
+    result: "A trip tailored to your personal evolution, not just your itinerary.",
     image: diningImage,
     alt: "Atmospheric Mediterranean dining table curated for a bespoke journey",
     Icon: CompassIcon,
@@ -102,9 +102,9 @@ const valueProps = [
   {
     number: "02",
     eyebrow: "Radical Accountability",
-    headline: "Your Dedicated Advocate, Every Mile of the Way",
-    copy: "We monitor the moving pieces, brief the right people, and resolve friction before it reaches you.",
-    result: "Quiet confidence in every time zone.",
+    headline: "Your Advocate in Every Time Zone",
+    copy: "You are never a confirmation number. We handle the logistics—from briefing hotel managers to real-time price monitoring—so you can remain entirely present. If a detail shifts, we’ve already fixed it before you land.",
+    result: "The quiet confidence of a dedicated human partner, every mile of the way.",
     image: heroImage,
     alt: "Luxury coastal terrace that reflects calm, seamless travel support",
     Icon: AdvocateIcon,
@@ -112,8 +112,8 @@ const valueProps = [
   {
     number: "03",
     eyebrow: "The Vetted Edge",
-    headline: "Authentic Perspective. Exclusive Access.",
-    copy: "We pair taste-tested recommendations with global partnerships and VIP perks you won’t find online.",
+    headline: "Lived Perspective. Exclusive Access.",
+    copy: 'True luxury is a perspective, not a price point. Having explored the world from $6 gems to ultra-luxury estates, we bring a calibrated "BS detector" to every stay—securing VIP perks and "un-googleable" access at no extra cost.',
     image: archImage,
     alt: "European architecture and villa archway selected as luxury travel inspiration",
     Icon: EdgeIcon,
@@ -229,46 +229,34 @@ function Index() {
             A more discerning way to design the journey
           </h2>
         </div>
-        <div className="mt-20 space-y-20 lg:space-y-28">
-          {valueProps.map((pillar, index) => (
+        <div className="mt-16 grid gap-px bg-border lg:grid-cols-3">
+          {valueProps.map((pillar) => (
             <article
               key={pillar.eyebrow}
-              className="scroll-reveal grid gap-10 border-t border-border pt-10 lg:grid-cols-[0.72fr_1.15fr_0.9fr] lg:items-start lg:gap-14"
+              className="scroll-reveal flex min-h-[38rem] flex-col bg-card p-8 sm:p-10"
             >
-              <p className="font-serif text-6xl leading-none text-rose sm:text-7xl">
-                {pillar.number}
-              </p>
-              <div className="max-w-2xl">
-                <pillar.Icon className="mb-8 h-9 w-9 text-rose" strokeWidth={1.25} />
+              <div className="flex items-start justify-between gap-6">
+                <p className="font-serif text-6xl leading-none text-rose sm:text-7xl">
+                  {pillar.number}
+                </p>
+                <pillar.Icon className="mt-2 h-9 w-9 shrink-0 text-olive" strokeWidth={1.25} />
+              </div>
+              <div className="mt-10 flex flex-1 flex-col">
                 <p className="text-xs font-light uppercase tracking-[0.16em] text-olive sm:text-sm">
                   {pillar.eyebrow}
                 </p>
-                <h3 className="mt-4 font-serif text-3xl leading-tight text-ink sm:text-5xl">
+                <h3 className="mt-4 font-serif text-3xl leading-tight text-ink">
                   {pillar.headline}
                 </h3>
-                <p className="mt-6 text-sm font-light leading-7 text-muted-foreground sm:text-base sm:leading-8">
+                <p className="mt-6 text-sm font-light leading-7 text-muted-foreground">
                   {pillar.copy}
                 </p>
                 {pillar.result && (
-                  <p className="mt-7 border-l border-rose pl-5 font-serif text-2xl leading-snug text-ink">
+                  <p className="mt-auto border-l border-rose pl-5 pt-10 font-serif text-2xl leading-snug text-ink">
                     The Result: {pillar.result}
                   </p>
                 )}
               </div>
-              <figure
-                className={`overflow-hidden bg-secondary shadow-soft ${
-                  index === 1 ? "mt-0 aspect-[4/3] lg:mt-16" : "aspect-[3/4] arch-frame"
-                }`}
-              >
-                <img
-                  src={pillar.image}
-                  alt={pillar.alt}
-                  width={index === 1 ? 1600 : 1200}
-                  height={index === 1 ? 1000 : 1600}
-                  loading="lazy"
-                  className="h-full w-full object-cover"
-                />
-              </figure>
             </article>
           ))}
         </div>
