@@ -213,7 +213,9 @@
   }
 
   .animate-testimonials-marquee {
-    animation: testimonials-marquee 28s linear infinite;
+    animation: testimonials-marquee 18s linear infinite;
+    transform: translate3d(-50%, 0, 0);
+    will-change: transform;
   }
 }
 
@@ -250,10 +252,10 @@
 
 @keyframes testimonials-marquee {
   from {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
   to {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -264,5 +266,10 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
+  }
+
+  .animate-testimonials-marquee {
+    animation-duration: 18s !important;
+    animation-iteration-count: infinite !important;
   }
 }
