@@ -70,7 +70,7 @@ const valueProps = [
   {
     number: "01",
     eyebrow: "Intuitive Curation",
-    headline: "The why before the where.",
+    headline: 'The "Why" Before the "Where"',
     copy: "We move past the surface-level Top 10 lists. By understanding the psychology behind your journey—whether it’s a milestone anniversary or a deep need for cultural immersion—we design experiences that pull you out of your comfort zone and into the heart of a destination.",
     result: "A journey tailored not just to your itinerary, but to your personal evolution.",
     image: diningImage,
@@ -79,7 +79,7 @@ const valueProps = [
   {
     number: "02",
     eyebrow: "Radical Accountability",
-    headline: "Your dedicated advocate, every mile of the way.",
+    headline: "Your Dedicated Advocate, Every Mile of the Way",
     copy: "You are never a confirmation number. We handle the friction—from briefing hotel managers before you arrive to monitoring flight changes and pricing in real-time. If a detail isn’t right, we’ve already started fixing it before you land, so you can remain entirely present in the moment.",
     result: "The quiet confidence of having a human partner in every time zone.",
     image: heroImage,
@@ -88,9 +88,8 @@ const valueProps = [
   {
     number: "03",
     eyebrow: "The Vetted Edge",
-    headline: "Authentic perspective. Exclusive access.",
-    copy: "True luxury is a perspective, not a price point. Having explored the world from $6 hidden gems to ultra-luxury estates, we bring a calibrated BS detector to every recommendation. We leverage global partnerships to secure un-googleable VIP perks—like room upgrades and private transfers—at no extra cost to you.",
-    result: "A sharper point of view, better access, and recommendations that actually earn their place.",
+    headline: "Authentic Perspective. Exclusive Access.",
+    copy: 'True luxury is a perspective, not a price point. Having explored the world from $6 hidden gems to ultra-luxury estates, we bring a calibrated "BS detector" to every recommendation. We leverage global partnerships to secure "un-googleable" VIP perks—like room upgrades and private transfers—at no extra cost to you.',
     image: archImage,
     alt: "European architecture and villa archway selected as luxury travel inspiration",
   },
@@ -224,9 +223,11 @@ function Index() {
                 <p className="mt-6 text-sm font-light leading-7 text-muted-foreground sm:text-base sm:leading-8">
                   {pillar.copy}
                 </p>
-                <p className="mt-7 border-l border-rose pl-5 font-serif text-2xl leading-snug text-ink">
-                  The Result: {pillar.result}
-                </p>
+                {pillar.result && (
+                  <p className="mt-7 border-l border-rose pl-5 font-serif text-2xl leading-snug text-ink">
+                    The Result: {pillar.result}
+                  </p>
+                )}
               </div>
               <figure
                 className={`overflow-hidden bg-secondary shadow-soft ${
