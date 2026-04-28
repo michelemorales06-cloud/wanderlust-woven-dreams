@@ -230,7 +230,7 @@ function Index() {
           </h2>
         </div>
         <div className="mt-16 grid gap-px bg-border lg:grid-cols-3">
-          {valueProps.map((pillar, index) => (
+          {valueProps.map((pillar) => (
             <article
               key={pillar.eyebrow}
               className="scroll-reveal flex min-h-[38rem] flex-col bg-card p-8 sm:p-10"
