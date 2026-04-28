@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { CalendarDays, Gem, Handshake, Map, Plane, Sparkles, type LucideIcon } from "lucide-react";
 
+import archImage from "../assets/editorial-villa-arch.jpg";
 import heroImage from "../assets/luxury-coastal-terrace.jpg";
+import diningImage from "../assets/mediterranean-dining-detail.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -22,19 +25,26 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const services = [
+const services: Array<[LucideIcon, string, string]> = [
   [
-    "Arrive certain",
-    "You step into a trip that already feels considered, calm, and beautifully handled.",
+    Gem,
+    "Stay better",
+    "Hotel matches, upgrades, amenities, and room notes are positioned with care.",
   ],
-  ["Stay better", "Hotel matches, upgrades, amenities, and room notes are positioned with care."],
   [
+    Map,
+    "Travel personally",
+    "Every recommendation reflects the way you actually like to spend your days.",
+  ],
+  [
+    Plane,
     "Move seamlessly",
     "Transfers, timing, reservations, and destination flow are aligned before you go.",
   ],
   [
-    "Travel personally",
-    "Every recommendation reflects the way you actually like to spend your days.",
+    Handshake,
+    "Arrive certain",
+    "You step into a trip that already feels considered, calm, and beautifully handled.",
   ],
 ];
 
@@ -98,7 +108,7 @@ function Index() {
         </nav>
       </header>
 
-      <section id="top" className="relative flex min-h-[92svh] items-end pt-24">
+      <section id="top" className="relative flex min-h-[92svh] items-center justify-center pt-24">
         <img
           src={heroImage}
           alt="Luxury coastal villa terrace overlooking the sea"
@@ -106,21 +116,21 @@ function Index() {
           height={1000}
           className="absolute inset-0 h-full w-full object-cover animate-drift"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/78 via-ink/30 to-background/8" />
-        <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-10 px-5 pb-16 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:pb-24">
-          <div className="max-w-2xl animate-fade-up text-primary-foreground">
+        <div className="absolute inset-0 bg-ink/48" />
+        <div className="relative z-10 mx-auto w-full max-w-5xl px-5 py-20 text-center sm:px-8">
+          <div className="mx-auto max-w-4xl animate-fade-up text-primary-foreground">
             <p className="mb-6 text-[0.68rem] font-semibold uppercase tracking-[0.34em] text-linen/85">
               Luxury travel, thoughtfully designed
             </p>
             <h1 className="font-serif text-5xl leading-[0.98] text-linen sm:text-7xl lg:text-8xl">
               Bespoke journeys for modern travelers
             </h1>
-            <div className="my-7 h-px w-20 editorial-rule" />
-            <p className="max-w-md text-sm leading-7 text-linen/88 sm:text-base">
+            <div className="mx-auto my-7 h-px w-24 editorial-rule" />
+            <p className="mx-auto max-w-xl text-sm leading-7 text-linen/88 sm:text-base">
               Elevated hotels, villas, cruises, and custom itineraries arranged with insider access
               and seamless support.
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
               <a
                 href="mailto:hello@themodernnomade.com"
                 className="border border-linen bg-linen px-7 py-4 text-center text-[0.66rem] font-bold uppercase tracking-[0.26em] text-ink transition-transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-ring"
@@ -135,12 +145,6 @@ function Index() {
               </a>
             </div>
           </div>
-          <aside className="hidden self-end border-l border-linen/35 pl-8 text-linen/86 lg:block">
-            <p className="max-w-xs font-serif text-2xl leading-snug">
-              “The difference is not more planning. It is better taste, better access, and fewer
-              open loops.”
-            </p>
-          </aside>
         </div>
       </section>
 
@@ -152,18 +156,78 @@ function Index() {
           </h2>
         </div>
         <div className="mt-14 grid gap-px bg-border md:grid-cols-4">
-          {services.map(([title, copy], index) => (
+          {services.map(([Icon, title, copy], index) => (
             <article
               key={title}
-              className="group bg-card p-8 text-center shadow-soft transition-transform hover:-translate-y-1"
+              className="group bg-card p-8 text-center shadow-soft transition-transform hover:-translate-y-1 scroll-reveal"
             >
-              <span className="font-serif text-3xl text-rose">0{index + 1}</span>
+              <Icon
+                className="mx-auto h-8 w-8 text-olive transition-transform group-hover:-translate-y-1"
+                strokeWidth={1.25}
+              />
+              <span className="mt-6 block font-serif text-3xl text-rose">0{index + 1}</span>
               <h3 className="mt-7 text-sm font-bold uppercase tracking-[0.24em] text-ink">
                 {title}
               </h3>
               <p className="mt-4 text-sm leading-6 text-muted-foreground">{copy}</p>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 pb-20 sm:px-8 lg:pb-28">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div className="scroll-reveal">
+            <p className="text-[0.68rem] font-bold uppercase tracking-[0.32em] text-rose">
+              Experiences
+            </p>
+            <h2 className="mt-4 max-w-xl font-serif text-4xl leading-tight sm:text-5xl">
+              A travel moodboard, translated into reservations, rhythm, and access
+            </h2>
+            <p className="mt-6 max-w-lg text-sm leading-7 text-muted-foreground">
+              From a terrace lunch to a private boat day, the itinerary is composed like an
+              editorial spread: varied, atmospheric, and intentionally paced.
+            </p>
+          </div>
+          <div className="grid grid-cols-6 gap-4 md:gap-6">
+            <figure className="scroll-reveal col-span-4 overflow-hidden border border-border bg-card p-3 shadow-editorial">
+              <img
+                src={diningImage}
+                alt="Mediterranean terrace dining arranged for luxury travelers"
+                width={1400}
+                height={1000}
+                loading="lazy"
+                className="aspect-[4/3] h-full w-full object-cover"
+              />
+            </figure>
+            <figure className="scroll-reveal col-span-2 mt-10 overflow-hidden bg-secondary shadow-soft arch-frame">
+              <img
+                src={archImage}
+                alt="European villa archway with olive trees and roses"
+                width={1200}
+                height={1600}
+                loading="lazy"
+                className="aspect-[3/5] h-full w-full object-cover"
+              />
+            </figure>
+            <figure className="scroll-reveal col-span-3 -mt-2 overflow-hidden bg-secondary shadow-soft arch-frame">
+              <img
+                src={archImage}
+                alt="Arched villa corridor in warm Mediterranean light"
+                width={1200}
+                height={1600}
+                loading="lazy"
+                className="aspect-[4/5] h-full w-full object-cover object-center"
+              />
+            </figure>
+            <div className="scroll-reveal col-span-3 border-y border-border py-8 pl-2">
+              <Sparkles className="mb-6 h-8 w-8 text-rose" strokeWidth={1.25} />
+              <p className="font-serif text-2xl leading-snug text-ink">
+                Insider stays, thoughtful tables, unhurried days, and details that quietly say: this
+                was made for you.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -238,12 +302,12 @@ function Index() {
 
       <section id="about" className="border-t border-border bg-veil px-5 py-20 sm:px-8 lg:py-28">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
-          <div className="aspect-[4/5] overflow-hidden bg-secondary shadow-editorial">
+          <div className="aspect-[4/5] overflow-hidden bg-secondary shadow-editorial arch-frame scroll-reveal">
             <img
-              src={heroImage}
+              src={archImage}
               alt="Elegant European terrace used as luxury travel inspiration"
-              width={1600}
-              height={1000}
+              width={1200}
+              height={1600}
               loading="lazy"
               className="h-full w-full object-cover object-left transition-transform duration-700 hover:scale-105"
             />
@@ -283,6 +347,29 @@ function Index() {
           </div>
         </div>
       </section>
+      <footer className="bg-primary px-5 py-12 text-primary-foreground sm:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-8 border-t border-linen/18 pt-10 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="font-serif text-3xl uppercase leading-none tracking-[0.22em] text-linen">
+              The
+              <br />
+              Modern Nomade
+            </p>
+            <p className="mt-5 max-w-md text-sm leading-7 text-linen/68">
+              Bespoke travel · insider access · thoughtful planning · seamless experiences.
+            </p>
+          </div>
+          <div className="flex items-center gap-3 text-[0.66rem] font-bold uppercase tracking-[0.24em] text-linen/75">
+            <CalendarDays className="h-4 w-4 text-rose" strokeWidth={1.5} />
+            <a
+              href="mailto:hello@themodernnomade.com"
+              className="transition-colors hover:text-linen"
+            >
+              Begin an inquiry
+            </a>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }
