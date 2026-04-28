@@ -92,7 +92,7 @@ const valueProps = [
   {
     number: "01",
     eyebrow: "INTENTIONAL CURATION",
-    headline: 'The "Why" Before the "Where"',
+    headline: "Depth over lists.",
     copy: "We don’t do generic \"Top 10\" guides. We focus on why you’re traveling in the first place, building trips that actually get you away from the crowds and closer to the heart of a destination.",
     result: "A trip tailored to your personal evolution, not just your itinerary.",
     image: diningImage,
