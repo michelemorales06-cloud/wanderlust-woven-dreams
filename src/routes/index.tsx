@@ -1,9 +1,81 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { CalendarDays, Gem, Handshake, Map, Plane, Sparkles, type LucideIcon } from "lucide-react";
 
 import archImage from "../assets/editorial-villa-arch.jpg";
 import heroImage from "../assets/luxury-coastal-terrace.jpg";
 import diningImage from "../assets/mediterranean-dining-detail.jpg";
+
+type IconProps = {
+  className?: string;
+  strokeWidth?: number;
+};
+
+type IconComponent = (props: IconProps) => React.ReactElement;
+
+const IconBase = ({
+  className,
+  strokeWidth = 1.25,
+  children,
+}: IconProps & { children: React.ReactNode }) => (
+  <svg
+    aria-hidden="true"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={strokeWidth}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    {children}
+  </svg>
+);
+
+const GemIcon: IconComponent = (props) => (
+  <IconBase {...props}>
+    <path d="M6 3h12l4 6-10 12L2 9l4-6Z" />
+    <path d="M2 9h20" />
+    <path d="m12 21 4-12-4-6-4 6 4 12Z" />
+  </IconBase>
+);
+
+const MapIcon: IconComponent = (props) => (
+  <IconBase {...props}>
+    <path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3V6Z" />
+    <path d="M9 3v15" />
+    <path d="M15 6v15" />
+  </IconBase>
+);
+
+const PlaneIcon: IconComponent = (props) => (
+  <IconBase {...props}>
+    <path d="M21 16 3 21l4-9-4-9 18 5-10 4 10 4Z" />
+    <path d="M7 12h4" />
+  </IconBase>
+);
+
+const HandshakeIcon: IconComponent = (props) => (
+  <IconBase {...props}>
+    <path d="m7 11 3-3 4 4 2-2 5 5-4 4-3-3-2 2-5-5Z" />
+    <path d="m2 12 5-5 3 1" />
+    <path d="m22 12-5-5-3 1" />
+  </IconBase>
+);
+
+const SparklesIcon: IconComponent = (props) => (
+  <IconBase {...props}>
+    <path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z" />
+    <path d="m5 16 .8 2.2L8 19l-2.2.8L5 22l-.8-2.2L2 19l2.2-.8L5 16Z" />
+  </IconBase>
+);
+
+const CalendarIcon: IconComponent = (props) => (
+  <IconBase {...props}>
+    <path d="M7 3v4" />
+    <path d="M17 3v4" />
+    <path d="M4 8h16" />
+    <rect x="4" y="5" width="16" height="16" rx="2" />
+  </IconBase>
+);
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -25,24 +97,24 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const services: Array<[LucideIcon, string, string]> = [
+const services: Array<[IconComponent, string, string]> = [
   [
-    Gem,
+    GemIcon,
     "Stay better",
     "Hotel matches, upgrades, amenities, and room notes are positioned with care.",
   ],
   [
-    Map,
+    MapIcon,
     "Travel personally",
     "Every recommendation reflects the way you actually like to spend your days.",
   ],
   [
-    Plane,
+    PlaneIcon,
     "Move seamlessly",
     "Transfers, timing, reservations, and destination flow are aligned before you go.",
   ],
   [
-    Handshake,
+    HandshakeIcon,
     "Arrive certain",
     "You step into a trip that already feels considered, calm, and beautifully handled.",
   ],
@@ -221,7 +293,7 @@ function Index() {
               />
             </figure>
             <div className="scroll-reveal col-span-3 border-y border-border py-8 pl-2">
-              <Sparkles className="mb-6 h-8 w-8 text-rose" strokeWidth={1.25} />
+              <SparklesIcon className="mb-6 h-8 w-8 text-rose" strokeWidth={1.25} />
               <p className="font-serif text-2xl leading-snug text-ink">
                 Insider stays, thoughtful tables, unhurried days, and details that quietly say: this
                 was made for you.
@@ -360,7 +432,7 @@ function Index() {
             </p>
           </div>
           <div className="flex items-center gap-3 text-[0.66rem] font-bold uppercase tracking-[0.24em] text-linen/75">
-            <CalendarDays className="h-4 w-4 text-rose" strokeWidth={1.5} />
+            <CalendarIcon className="h-4 w-4 text-rose" strokeWidth={1.5} />
             <a
               href="mailto:hello@themodernnomade.com"
               className="transition-colors hover:text-linen"
