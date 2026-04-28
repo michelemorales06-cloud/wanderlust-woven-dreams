@@ -26,7 +26,11 @@ export const Route = createFileRoute("/")({
 });
 
 const services: Array<[LucideIcon, string, string]> = [
-  [Gem, "Stay better", "Hotel matches, upgrades, amenities, and room notes are positioned with care."],
+  [
+    Gem,
+    "Stay better",
+    "Hotel matches, upgrades, amenities, and room notes are positioned with care.",
+  ],
   [
     Map,
     "Travel personally",
@@ -157,7 +161,10 @@ function Index() {
               key={title}
               className="group bg-card p-8 text-center shadow-soft transition-transform hover:-translate-y-1 scroll-reveal"
             >
-              <Icon className="mx-auto h-8 w-8 text-olive transition-transform group-hover:-translate-y-1" strokeWidth={1.25} />
+              <Icon
+                className="mx-auto h-8 w-8 text-olive transition-transform group-hover:-translate-y-1"
+                strokeWidth={1.25}
+              />
               <span className="mt-6 block font-serif text-3xl text-rose">0{index + 1}</span>
               <h3 className="mt-7 text-sm font-bold uppercase tracking-[0.24em] text-ink">
                 {title}
@@ -184,19 +191,40 @@ function Index() {
           </div>
           <div className="grid grid-cols-6 gap-4 md:gap-6">
             <figure className="scroll-reveal col-span-4 overflow-hidden border border-border bg-card p-3 shadow-editorial">
-              <img src={diningImage} alt="Mediterranean terrace dining arranged for luxury travelers" width={1400} height={1000} loading="lazy" className="aspect-[4/3] h-full w-full object-cover" />
+              <img
+                src={diningImage}
+                alt="Mediterranean terrace dining arranged for luxury travelers"
+                width={1400}
+                height={1000}
+                loading="lazy"
+                className="aspect-[4/3] h-full w-full object-cover"
+              />
             </figure>
             <figure className="scroll-reveal col-span-2 mt-10 overflow-hidden bg-secondary shadow-soft arch-frame">
-              <img src={archImage} alt="European villa archway with olive trees and roses" width={1200} height={1600} loading="lazy" className="aspect-[3/5] h-full w-full object-cover" />
+              <img
+                src={archImage}
+                alt="European villa archway with olive trees and roses"
+                width={1200}
+                height={1600}
+                loading="lazy"
+                className="aspect-[3/5] h-full w-full object-cover"
+              />
             </figure>
             <figure className="scroll-reveal col-span-3 -mt-2 overflow-hidden bg-secondary shadow-soft arch-frame">
-              <img src={archImage} alt="Arched villa corridor in warm Mediterranean light" width={1200} height={1600} loading="lazy" className="aspect-[4/5] h-full w-full object-cover object-center" />
+              <img
+                src={archImage}
+                alt="Arched villa corridor in warm Mediterranean light"
+                width={1200}
+                height={1600}
+                loading="lazy"
+                className="aspect-[4/5] h-full w-full object-cover object-center"
+              />
             </figure>
             <div className="scroll-reveal col-span-3 border-y border-border py-8 pl-2">
               <Sparkles className="mb-6 h-8 w-8 text-rose" strokeWidth={1.25} />
               <p className="font-serif text-2xl leading-snug text-ink">
-                Insider stays, thoughtful tables, unhurried days, and details that quietly say:
-                this was made for you.
+                Insider stays, thoughtful tables, unhurried days, and details that quietly say: this
+                was made for you.
               </p>
             </div>
           </div>
@@ -323,7 +351,9 @@ function Index() {
         <div className="mx-auto flex max-w-7xl flex-col gap-8 border-t border-linen/18 pt-10 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="font-serif text-3xl uppercase leading-none tracking-[0.22em] text-linen">
-              The<br />Modern Nomade
+              The
+              <br />
+              Modern Nomade
             </p>
             <p className="mt-5 max-w-md text-sm leading-7 text-linen/68">
               Bespoke travel · insider access · thoughtful planning · seamless experiences.
@@ -331,7 +361,10 @@ function Index() {
           </div>
           <div className="flex items-center gap-3 text-[0.66rem] font-bold uppercase tracking-[0.24em] text-linen/75">
             <CalendarDays className="h-4 w-4 text-rose" strokeWidth={1.5} />
-            <a href="mailto:hello@themodernnomade.com" className="transition-colors hover:text-linen">
+            <a
+              href="mailto:hello@themodernnomade.com"
+              className="transition-colors hover:text-linen"
+            >
               Begin an inquiry
             </a>
           </div>
